@@ -55,14 +55,14 @@ public class SplashActivity extends AppCompatActivity {
 
     private void startCountDownFrameAnimation() {
         mCountDown.setBackgroundResource(R.drawable.frame_anim);
-        AnimationDrawable countdownAnim = (AnimationDrawable) mCountDown.getBackground();
+        AnimationDrawable countdownAnim = (AnimationDrawable)mCountDown.getBackground();
         countdownAnim.start();
     }
 
     private void startFireTweenAnimation() {
-        Animation fire_anim = AnimationUtils.loadAnimation(this, R.anim.rotate);
-        mFirework.startAnimation(fire_anim);
+        Animation fire_anim = AnimationUtils.loadAnimation(this, R.anim.universe);
         fire_anim.setAnimationListener(animationListener);
+        mFirework.startAnimation(fire_anim);
     }
 
     private void startRocketTweenAnimation() {

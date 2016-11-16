@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
@@ -20,27 +19,30 @@ import java.util.Date;
 
 public class MonthFragment extends Fragment implements OnClickListener, OnItemClickListener {
     ArrayList<String> mItems;
-    ArrayAdapter<String> adapter;
+    TextAdapter adapter;
     TextView textYear;
     TextView textMon;
 
+    int year, mon;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Toast.makeText(this.getContext(), "This is Month Page", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "This is Month Page", Toast.LENGTH_SHORT).show();
         View view = inflater.inflate(R.layout.fragment_month, container, false);
 
+        Date date = new Date();
+        year = date.getYear() + 1900;
+        mon = date.getMonth() + 1;
+
         mItems = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_list_item_1, mItems);
+        adapter = new TextAdapter(getContext(), mItems, year, mon);
         textYear = (TextView)view.findViewById(R.id.edit1);
         textMon = (TextView)view.findViewById(R.id.edit2);
 
-        GridView gird = (GridView)view.findViewById(R.id.grid1);
-        gird.setAdapter(adapter);
-        gird.setOnItemClickListener(this);
+        GridView grid = (GridView)view.findViewById(R.id.grid1);
+        grid.setAdapter(adapter);
+        grid.setOnItemClickListener(this);
 
-        Date date = new Date();
-        int year = date.getYear() + 1900;
-        int mon = date.getMonth() + 1;
         textYear.setText(year + "");
         textMon.setText(mon + "");
 
@@ -67,14 +69,15 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
         Date current = new Date(year-1900, mon-1, 1);
         int day = current.getDay();
 
-        for (int i = 0; i < day; i++)
+        for(int i=0; i<day; i++)
             mItems.add("");
 
         current.setDate(32);
         int last = 32 - current.getDate();
 
-        for (int i=1; i<=last; i++)
+        for(int i=1; i<=last; i++)
             mItems.add(i + "");
+
         adapter.notifyDataSetChanged();
     }
 
