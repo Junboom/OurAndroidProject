@@ -36,9 +36,12 @@
             android:hint="Month" />
         <Button
             android:id="@+id/bt1"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Click" />
+            android:background="#000000"
+            android:text="SHOW"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
@@ -46,7 +49,9 @@
         android:id="@+id/grid1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:background="#000000"
+        android:paddingTop="10dp"
+        android:layout_margin="5dp"
         android:numColumns="7" />
 
 </LinearLayout>
