@@ -48,7 +48,7 @@ public class TextAdapter extends BaseAdapter {
         else if(i%7 == 6)
             textview.setTextColor(Color.BLUE);
         else
-            textview.setTextColor(Color.BLACK);
+            textview.setTextColor(Color.WHITE);
 
         return textview;
     }
