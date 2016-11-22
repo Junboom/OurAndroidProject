@@ -14,7 +14,7 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
     MyDBHelper mDBHelper;
     int mId;
     String today;
-    EditText editDate, editTitle, editTime, editMemo;
+    EditText editDate, editTitle, editTime1, editTime2, editPlace, editMemo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,14 +23,16 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
 
         editDate = (EditText)findViewById(R.id.editdate);
         editTitle = (EditText)findViewById(R.id.edittitle);
-        editTime = (EditText)findViewById(R.id.edittime);
+        editTime1 = (EditText)findViewById(R.id.edittime1);
+        editTime2 = (EditText)findViewById(R.id.edittime2);
+        editPlace = (EditText)findViewById(R.id.editplace);
         editMemo = (EditText)findViewById(R.id.editmemo);
 
         Intent intent = getIntent();
         mId = intent.getIntExtra("ParamID", -1);
         today = intent.getStringExtra("ParamDate");
 
-        mDBHelper = new MyDBHelper(this, "Today.db", null, 1);
+        mDBHelper = new MyDBHelper(this, "Today1.db", null, 1);
 
         if(mId == -1)
             editDate.setText(today);
@@ -41,8 +43,10 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
             if(cursor.moveToNext()) {
                 editTitle.setText(cursor.getString(1));
                 editDate.setText(cursor.getString(2));
-                editTime.setText(cursor.getString(3));
-                editMemo.setText(cursor.getString(4));
+                editTime1.setText(cursor.getString(3));
+                editTime2.setText(cursor.getString(4));
+                editPlace.setText(cursor.getString(5));
+                editMemo.setText(cursor.getString(6));
             }
             mDBHelper.close();
         }
@@ -68,7 +72,9 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
                     db.execSQL("UPDATE today SET title='"
                             + editTitle.getText().toString() + "',date='"
                             + editDate.getText().toString() + "', time='"
-                            + editTime.getText().toString() + "', memo='"
+                            + editTime1.getText().toString() + "', time1='"
+                            + editTime2.getText().toString() + "', time2='"
+                            + editPlace.getText().toString() + "', place='"
                             + editMemo.getText().toString() + "' WHERE _id='" + mId
                             + "';");
                 }
@@ -76,7 +82,9 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
                     db.execSQL("INSERT INTO today VALUES(null, '"
                             + editTitle.getText().toString() + "', '"
                             + editDate.getText().toString() + "', '"
-                            + editTime.getText().toString() + "', '"
+                            + editTime1.getText().toString() + "', '"
+                            + editTime2.getText().toString() + "', '"
+                            + editPlace.getText().toString() + "', '"
                             + editMemo.getText().toString() + "');");
                 }
                 mDBHelper.close();

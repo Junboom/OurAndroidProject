@@ -31,13 +31,13 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         TextView text = (TextView)findViewById(R.id.texttoday);
         text.setText(today);
 
-        mDBHelper = new MyDBHelper(this, "Today.db", null, 1);
+        mDBHelper = new MyDBHelper(this, "Today1.db", null, 1);
         SQLiteDatabase db = mDBHelper.getWritableDatabase();
 
         cursor = db.rawQuery("SELECT * FROM today WHERE date = '" + today + "'", null);
 
         adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_2, cursor,
-                new String[] {"title", "time"}, new int[] { android.R.id.text1, android.R.id.text2 });
+                new String[] {"title", "time1"}, new int[] { android.R.id.text1, android.R.id.text2 });
 
         ListView list = (ListView)findViewById(R.id.list1);
         list.setAdapter(adapter);
