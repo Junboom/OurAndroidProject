@@ -14,34 +14,39 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class WeekFragment extends Fragment implements OnClickListener, OnItemClickListener {
-    ArrayList<String> mItems;
-    TextAdapter adapter;
-    TextView textYear;
-    TextView textMon;
+    SimpleDateFormat dateFormat;
+    Date date;
+    int year, mon, dated;
 
-    int year, mon;
+    ArrayList<String> mItems;
+    WeekAdapter adapter;
+    TextView textYear, textMon;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Toast.makeText(getContext(), "This is Week Page", Toast.LENGTH_SHORT).show();
         View view = inflater.inflate(R.layout.fragment_week, container, false);
 
-        Date date = new Date();
+        dateFormat = new SimpleDateFormat("E", java.util.Locale.getDefault());
+        date = new Date();
         year = date.getYear() + 1900;
         mon = date.getMonth() + 1;
+        dated = date.getDay();
 
         mItems = new ArrayList<>();
-        adapter = new TextAdapter(getContext(), mItems, year, mon);
+        adapter = new WeekAdapter(getContext(), mItems, year, mon);
         textYear = (TextView)view.findViewById(R.id.edit1);
         textMon = (TextView)view.findViewById(R.id.edit2);
 
         GridView grid = (GridView)view.findViewById(R.id.grid1);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(this);
+        grid.setNumColumns(1);
 
         textYear.setText(year + "");
         textMon.setText(mon + "");
@@ -57,14 +62,6 @@ public class WeekFragment extends Fragment implements OnClickListener, OnItemCli
 
     private void matchDate(int year, int mon) {
         mItems.clear();
-
-        mItems.add("일");
-        mItems.add("월");
-        mItems.add("화");
-        mItems.add("수");
-        mItems.add("목");
-        mItems.add("금");
-        mItems.add("토");
 
         Date current = new Date(year-1900, mon-1, 1);
         int day = current.getDay();
@@ -83,26 +80,10 @@ public class WeekFragment extends Fragment implements OnClickListener, OnItemCli
 
     @Override
     public void onClick(View view) {
-        int year = Integer.parseInt(textYear.getText().toString());
-        int mon = Integer.parseInt(textMon.getText().toString());
-        matchDate(year, mon);
-
-        switch(getId()) {
-            case R.id.btn1w:
-
-                break;
-            case R.id.btn2w:
-
-                break;
-            case R.id.btn3w:
-
-                break;
-            case R.id.btn4w:
-
-                break;
-            case R.id.btn5w:
-
-                break;
+        if(view.getId() == R.id.bt1) {
+            int year = Integer.parseInt(textYear.getText().toString());
+            int mon = Integer.parseInt(textMon.getText().toString());
+            matchDate(year, mon);
         }
     }
 
@@ -110,7 +91,7 @@ public class WeekFragment extends Fragment implements OnClickListener, OnItemCli
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         if(!mItems.get(i).equals("")) {
             Intent intent = new Intent(this.getContext(), DetailActivity.class);
-            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/ " + mItems.get(i) + " (" + dateFormat.format(dated).toString() + ")");
             startActivity(intent);
         }
     }

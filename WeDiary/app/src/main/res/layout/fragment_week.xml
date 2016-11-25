@@ -14,41 +14,45 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+        <EditText
+            android:id="@+id/edit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Write Year" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Year" />
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Write Month" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Month" />
         <Button
-            android:id="@+id/btn1w"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:text="WEEK 1" />
-        <Button
-            android:id="@+id/btn2w"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:text="WEEK 2" />
-        <Button
-            android:id="@+id/btn3w"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:text="WEEK 3" />
-        <Button
-            android:id="@+id/btn4w"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:text="WEEK 4" />
-        <Button
-            android:id="@+id/btn5w"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:text="WEEK 5" />
+            android:id="@+id/bt1"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:text="SHOW"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
-    <ListView
+    <GridView
         android:id="@+id/grid1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#000000"
         android:paddingTop="10dp"
         android:layout_margin="5dp"
+        android:layout_gravity="left"
         android:numColumns="7" />
 
 </LinearLayout>

@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TextAdapter extends BaseAdapter {
+public class MonthAdapter extends BaseAdapter {
     Context mContext;
     int mYear, mMon;
     ArrayList<String> mItems;
 
-    public TextAdapter(Context context, ArrayList<String> mItems, int year, int mon) {
+    public MonthAdapter(Context context, ArrayList<String> mItems, int year, int mon) {
         mContext = context;
         this.mItems = mItems;
         mYear = year;

@@ -13,7 +13,7 @@ class MyDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE today(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "title TEXT, " + "date TEXT , " + "time1 TEXT, " + "time2 TEXT, " + "place TEXT, " + "memo TEXT );");
+                + "title TEXT, " + "date TEXT , " + "startTime TEXT, " + "endTime TEXT, " + "place TEXT, " + "memo TEXT );");
     }
 
     @Override

@@ -19,7 +19,7 @@ import java.util.Date;
 
 public class MonthFragment extends Fragment implements OnClickListener, OnItemClickListener {
     ArrayList<String> mItems;
-    TextAdapter adapter;
+    MonthAdapter adapter;
     TextView textYear;
     TextView textMon;
 
@@ -35,7 +35,7 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
         mon = date.getMonth() + 1;
 
         mItems = new ArrayList<>();
-        adapter = new TextAdapter(getContext(), mItems, year, mon);
+        adapter = new MonthAdapter(getContext(), mItems, year, mon);
         textYear = (TextView)view.findViewById(R.id.edit1);
         textMon = (TextView)view.findViewById(R.id.edit2);
 

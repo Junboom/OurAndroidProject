@@ -32,7 +32,7 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
         mId = intent.getIntExtra("ParamID", -1);
         today = intent.getStringExtra("ParamDate");
 
-        mDBHelper = new MyDBHelper(this, "Today1.db", null, 1);
+        mDBHelper = new MyDBHelper(this, "Today2.db", null, 1);
 
         if(mId == -1)
             editDate.setText(today);
@@ -70,10 +70,10 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
             case R.id.btnsave:
                 if(mId != -1) {
                     db.execSQL("UPDATE today SET title='"
-                            + editTitle.getText().toString() + "',date='"
-                            + editDate.getText().toString() + "', time='"
-                            + editTime1.getText().toString() + "', time1='"
-                            + editTime2.getText().toString() + "', time2='"
+                            + editTitle.getText().toString() + "',title='"
+                            + editDate.getText().toString() + "', date='"
+                            + editTime1.getText().toString() + "', startTime='"
+                            + editTime2.getText().toString() + "', endTime='"
                             + editPlace.getText().toString() + "', place='"
                             + editMemo.getText().toString() + "' WHERE _id='" + mId
                             + "';");
