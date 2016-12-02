@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import edu.hansung.ait.wediary.Week.WeekDate;
 
@@ -20,7 +21,6 @@ public class WeekViewHolder extends RecyclerView.Adapter<WeekViewHolder.ViewHold
 
     private ArrayList<WeekDate> weekDateList;
     private Context vContext;
-
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
