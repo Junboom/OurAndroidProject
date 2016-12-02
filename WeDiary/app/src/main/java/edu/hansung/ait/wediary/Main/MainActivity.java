@@ -1,7 +1,6 @@
-package edu.hansung.ait.wediary;
+package edu.hansung.ait.wediary.Main;
 
 import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,6 +9,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import edu.hansung.ait.wediary.Day.DayFragment;
+import edu.hansung.ait.wediary.Month.MonthFragment;
+import edu.hansung.ait.wediary.R;
+import edu.hansung.ait.wediary.Week.WeekFragment;
 
 public class MainActivity extends AppCompatActivity {
     final MonthFragment fragM = new MonthFragment();
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        final FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        final android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frag, fragM);
         transaction.commit();
     }
@@ -51,15 +55,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.frag1:
-                getFragmentManager().beginTransaction().replace(R.id.frag, fragM).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragM).addToBackStack(null).commit();
                 return true;
 
             case R.id.frag2:
-                getFragmentManager().beginTransaction().replace(R.id.frag, fragW).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragW).addToBackStack(null).commit();
                 return true;
 
             case R.id.frag3:
-                getFragmentManager().beginTransaction().replace(R.id.frag, fragD).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragD).addToBackStack(null).commit();
                 return true;
 
             default:

@@ -17,6 +17,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import edu.hansung.ait.wediary.Main.MainActivity;
+
 public class SplashActivity extends AppCompatActivity {
     final String TAG = "AnimationTest";
     FrameLayout mFrame;

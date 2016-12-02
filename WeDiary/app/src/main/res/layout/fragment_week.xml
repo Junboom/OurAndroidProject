@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.hansung.ait.wediary.MonthFragment">
+    tools:context="edu.hansung.ait.wediary.Month.MonthFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,15 +44,59 @@
             android:textColor="#FFFFFF" />
 
     </LinearLayout>
-
-    <GridView
-        android:id="@+id/grid1"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
-        android:paddingTop="10dp"
-        android:layout_margin="5dp"
-        android:layout_gravity="left"
-        android:numColumns="7" />
+        android:layout_weight="3"
+        android:padding="10dp">
 
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="horizontal"
+             android:layout_gravity="center">
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical">
+                 <!--Custom Toolbar-->
+                 <android.support.v7.widget.Toolbar
+                     android:id="@+id/toolbar"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="?attr/colorPrimary"
+                     android:minHeight="?attr/actionBarSize"
+                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                     android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+                 <android.support.design.widget.TabLayout
+                     android:id="@+id/tabLayout"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="?attr/colorPrimary"
+                     android:minHeight="?attr/actionBarSize"
+                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+             </LinearLayout>
+         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+<android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/weekPager"
+        android:background="#fff0cc">
+    </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+
+</LinearLayout>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package edu.hansung.ait.wediary;
+package edu.hansung.ait.wediary.Week;
 
 import android.content.Context;
 import android.graphics.Color;
