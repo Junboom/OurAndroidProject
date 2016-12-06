@@ -1,5 +1,4 @@
-package edu.hansung.ait.wediary.Month;
-
+package edu.hansung.ait.wediary;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,20 +9,18 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import edu.hansung.ait.wediary.DetailActivity;
-import edu.hansung.ait.wediary.R;
-
-public class MonthFragment extends Fragment implements OnClickListener, OnItemClickListener {
+public class WeekFragment extends Fragment implements OnClickListener, OnItemClickListener {
     ArrayList<String> mItems;
-    MonthAdapter adapter;
+    WeekAdapter adapter;
     TextView textYear;
     TextView textMon;
 
@@ -31,28 +28,33 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Toast.makeText(getContext(), "This is Month Page", Toast.LENGTH_SHORT).show();
-        View view = inflater.inflate(R.layout.fragment_month, container, false);
+        Toast.makeText(getContext(), "This is Week Page", Toast.LENGTH_SHORT).show();
+        View view = inflater.inflate(R.layout.fragment_week, container, false);
 
+        String[] items = {"일", "월", "화", "수", "목", "금", "토"};
         Date date = new Date();
         year = date.getYear() + 1900;
         mon = date.getMonth() + 1;
 
         mItems = new ArrayList<>();
-        adapter = new MonthAdapter(getContext(), mItems, year, mon);
-        textYear = (TextView)view.findViewById(R.id.edit1);
-        textMon = (TextView)view.findViewById(R.id.edit2);
+        adapter = new WeekAdapter(getContext(), mItems, year, mon);
+        textYear = (TextView)view.findViewById(R.id.wedit1);
+        textMon = (TextView)view.findViewById(R.id.wedit2);
 
-        GridView grid = (GridView)view.findViewById(R.id.grid1);
-        grid.setAdapter(adapter);
-        grid.setOnItemClickListener(this);
+        ListView list2 = (ListView)view.findViewById(R.id.list2);
+        ArrayAdapter<String> adapt = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, items);
+        list2.setAdapter(adapt);
+
+        ListView list = (ListView)view.findViewById(R.id.list1);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(this);
 
         textYear.setText(year + "");
         textMon.setText(mon + "");
 
         matchDate(year, mon);
 
-        Button btnmove = (Button)view.findViewById(R.id.bt1);
+        Button btnmove = (Button)view.findViewById(R.id.wbt1);
         btnmove.setOnClickListener(this);
         btnmove.requestFocus();
 
@@ -61,14 +63,6 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
 
     private void matchDate(int year, int mon) {
         mItems.clear();
-
-        mItems.add("일");
-        mItems.add("월");
-        mItems.add("화");
-        mItems.add("수");
-        mItems.add("목");
-        mItems.add("금");
-        mItems.add("토");
 
         Date current = new Date(year-1900, mon-1, 1);
         int day = current.getDay();
@@ -87,7 +81,7 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.bt1) {
+        if(view.getId() == R.id.wbt1) {
             int year = Integer.parseInt(textYear.getText().toString());
             int mon = Integer.parseInt(textMon.getText().toString());
             matchDate(year, mon);

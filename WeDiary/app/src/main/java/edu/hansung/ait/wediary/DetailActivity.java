@@ -19,13 +19,14 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     String today;
     Cursor cursor;
     SimpleCursorAdapter adapter;
+    public Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         today = intent.getStringExtra("Param1");
 
         TextView text = (TextView)findViewById(R.id.texttoday);

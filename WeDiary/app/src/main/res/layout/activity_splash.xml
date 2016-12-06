@@ -6,24 +6,18 @@
     android:layout_height="match_parent"
     tools:context="edu.hansung.ait.wediary.SplashActivity">
 
-    <ImageView
-        android:id="@+id/countdown"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center" />
 
     <ImageView
-        android:id="@+id/fire"
+        android:id="@+id/cal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:src="@drawable/universe" />
+        android:src="@drawable/cal" />
 
     <ImageView
-        android:id="@+id/rocket"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:src="@drawable/rocket" />
+        android:id="@+id/cj"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/cj" />
 
 </FrameLayout>

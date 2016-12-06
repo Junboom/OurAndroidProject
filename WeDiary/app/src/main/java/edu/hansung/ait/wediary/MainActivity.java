@@ -1,4 +1,4 @@
-package edu.hansung.ait.wediary.Main;
+package edu.hansung.ait.wediary;
 
 import android.app.ActionBar;
 import android.graphics.Color;
@@ -9,11 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import edu.hansung.ait.wediary.Day.DayFragment;
-import edu.hansung.ait.wediary.Month.MonthFragment;
-import edu.hansung.ait.wediary.R;
-import edu.hansung.ait.wediary.Week.WeekFragment;
 
 public class MainActivity extends AppCompatActivity {
     final MonthFragment fragM = new MonthFragment();
