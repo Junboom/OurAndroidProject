@@ -96,4 +96,85 @@ public class WeekFragment extends Fragment implements OnClickListener, OnItemCli
             startActivity(intent);
         }
     }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if(!mItems.get(i).equals("")) {
+            Intent intent = new Intent(this.getContext(), DetailActivity.class);
+            intent.putExtra("Param1", textYear.getText().toString() + "/" + textMon.getText().toString() + "/" + mItems.get(i));
+            startActivity(intent);
+        }
+    }
+    
 }
