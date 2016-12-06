@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<<<<<<< HEAD
 
         <TextView
             android:id="@+id/daytext"
@@ -50,3 +51,25 @@
     </LinearLayout>
 
 </FrameLayout>
+=======
+        <TextView
+            android:id="@+id/daytext"
+            android:layout_width="match_parent"
+            android:layout_height="250px"
+            android:textSize="80px"
+            android:gravity="center"
+            android:background="#000000"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <ListView
+            android:id="@+id/daylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</FrameLayout>
+>>>>>>> 5440030c27aacc37cb81b64be3ebf54631e95138
