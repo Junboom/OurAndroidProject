@@ -20,19 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getActionBar();
-        if(actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            Drawable drawable = getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp);
-            if(drawable != null) {
-                drawable.setTint(Color.WHITE);
-                actionBar.setHomeAsUpIndicator(drawable);
-            }
-        }
 
-        final android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frag, fragM);
-        transaction.commit();
     }
 
     @Override
@@ -53,14 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragM).addToBackStack(null).commit();
                 return true;
 
-            case R.id.frag2:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragW).addToBackStack(null).commit();
-                return true;
-
-            case R.id.frag3:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragD).addToBackStack(null).commit();
-                return true;
-
+            
             default:
                 return super.onOptionsItemSelected(item);
         }
