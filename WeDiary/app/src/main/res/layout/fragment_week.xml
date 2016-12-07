@@ -54,7 +54,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-<<<<<<< HEAD
         <Button
             android:id="@+id/wbtn1"
             android:text="1주차"
@@ -96,22 +95,6 @@
         android:layout_weight="0"
         android:gravity="center"
         android:orientation="horizontal">
-=======
-        <ListView
-            android:id="@+id/list2"
-            android:layout_width="50dp"
-            android:layout_height="400dp"
-            android:paddingTop="10dp"
-            android:layout_margin="5dp" />
-
-        <ListView
-            android:id="@+id/list1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#000000"
-            android:paddingTop="10dp"
-            android:layout_margin="5dp" />
->>>>>>> 0e944e9b81a381fcd2e338c9e4c9231bcafe2d10
 
         <ListView
             android:id="@+id/list2"
@@ -124,12 +107,9 @@
             android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="5dp"
             android:background="#000000" />
 
-<<<<<<< HEAD
     </LinearLayout>
 
-=======
->>>>>>> 0e944e9b81a381fcd2e338c9e4c9231bcafe2d10
 </LinearLayout>

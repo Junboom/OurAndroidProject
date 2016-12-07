@@ -69,14 +69,13 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
         switch(view.getId()) {
             case R.id.btnsave:
                 if(mId != -1) {
-                    db.execSQL("UPDATE today SET title='"
-                            + editTitle.getText().toString() + "',title='"
-                            + editDate.getText().toString() + "', date='"
-                            + editTime1.getText().toString() + "', startTime='"
-                            + editTime2.getText().toString() + "', endTime='"
-                            + editPlace.getText().toString() + "', place='"
-                            + editMemo.getText().toString() + "' WHERE _id='" + mId
-                            + "';");
+                    db.execSQL("UPDATE today SET title='" + editTitle.getText().toString()
+                            + "', date='" + editDate.getText().toString()
+                            + "', startTime='" + editTime1.getText().toString()
+                            + "', endTime='" + editTime2.getText().toString()
+                            + "', place='" + editPlace.getText().toString()
+                            + "', memo='" + editMemo.getText().toString()
+                            + "' WHERE _id='" + mId + "';");
                 }
                 else {
                     db.execSQL("INSERT INTO today VALUES(null, '"
