@@ -41,7 +41,11 @@ public class WeekAdapter extends BaseAdapter {
         TextView textview = new TextView(mContext);
         textview.setText(mItems.get(i));
         textview.setHeight(100);
+<<<<<<< HEAD
         textview.setPadding(50, 5, 0, 0);
+=======
+        textview.setPadding(10, 10, 10, 10);
+>>>>>>> 0e944e9b81a381fcd2e338c9e4c9231bcafe2d10
 
         if(i%7 == 0)
             textview.setTextColor(Color.RED);

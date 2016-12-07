@@ -17,6 +17,14 @@ import android.widget.Toast;
 
 import java.util.Date;
 
+<<<<<<< HEAD
+=======
+import edu.hansung.ait.wediary.DetailActivity;
+import edu.hansung.ait.wediary.EditActivity;
+import edu.hansung.ait.wediary.MyDBHelper;
+import edu.hansung.ait.wediary.R;
+
+>>>>>>> 0e944e9b81a381fcd2e338c9e4c9231bcafe2d10
 public class DayFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     MyDBHelper mDBHelper;
     Cursor cursor;
@@ -32,7 +40,11 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
         Date date = new Date();
         int year = date.getYear() + 1900;
         int mon = date.getMonth() + 1;
+<<<<<<< HEAD
         int day = date.getDate() + 1;
+=======
+        int day = date.getDate();
+>>>>>>> 0e944e9b81a381fcd2e338c9e4c9231bcafe2d10
 
         Intent intent = new Intent(getContext(), DetailActivity.class);
         intent.putExtra("Param1", year + "/" + mon + "/" + day);
