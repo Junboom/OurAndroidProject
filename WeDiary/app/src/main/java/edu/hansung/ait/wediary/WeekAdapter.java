@@ -1,4 +1,4 @@
-package edu.hansung.ait.wediary.Month;
+package edu.hansung.ait.wediary;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MonthAdapter extends BaseAdapter {
+public class WeekAdapter extends BaseAdapter {
     Context mContext;
     int mYear, mMon;
     ArrayList<String> mItems;
 
-    public MonthAdapter(Context context, ArrayList<String> mItems, int year, int mon) {
+    public WeekAdapter(Context context, ArrayList<String> mItems, int year, int mon) {
         mContext = context;
         this.mItems = mItems;
         mYear = year;
@@ -41,7 +41,7 @@ public class MonthAdapter extends BaseAdapter {
         TextView textview = new TextView(mContext);
         textview.setText(mItems.get(i));
         textview.setHeight(100);
-        textview.setGravity(1);
+        textview.setPadding(50, 5, 0, 0);
 
         if(i%7 == 0)
             textview.setTextColor(Color.RED);

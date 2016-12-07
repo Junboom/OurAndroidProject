@@ -103,6 +103,7 @@ public class EditActivity extends AppCompatActivity implements OnClickListener {
                 setResult(RESULT_CANCELED);
                 break;
         }
+
         finish();
     }
 }

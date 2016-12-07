@@ -1,4 +1,4 @@
-package edu.hansung.ait.wediary.Month;
+package edu.hansung.ait.wediary;
 
 
 import android.content.Intent;
@@ -17,9 +17,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
-
-import edu.hansung.ait.wediary.DetailActivity;
-import edu.hansung.ait.wediary.R;
 
 public class MonthFragment extends Fragment implements OnClickListener, OnItemClickListener {
     ArrayList<String> mItems;
@@ -57,7 +54,7 @@ public class MonthFragment extends Fragment implements OnClickListener, OnItemCl
         btnmove.requestFocus();
 
         return view;
-    }
+}
 
     private void matchDate(int year, int mon) {
         mItems.clear();

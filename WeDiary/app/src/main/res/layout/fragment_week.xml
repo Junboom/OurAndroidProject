@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.hansung.ait.wediary.Month.MonthFragment">
+    tools:context="edu.hansung.ait.wediary.WeekFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/edit1"
+            android:id="@+id/wedit1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:hint="Year" />
         <EditText
-            android:id="@+id/edit2"
+            android:id="@+id/wedit2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:hint="Month" />
         <Button
-            android:id="@+id/bt1"
+            android:id="@+id/wbt1"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,59 +44,72 @@
             android:textColor="#FFFFFF" />
 
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="horizontal"
-             android:layout_gravity="center">
-
-             <LinearLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:orientation="vertical">
-                 <!--Custom Toolbar-->
-                 <android.support.v7.widget.Toolbar
-                     android:id="@+id/toolbar"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:background="?attr/colorPrimary"
-                     android:minHeight="?attr/actionBarSize"
-                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                     android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-                 <android.support.design.widget.TabLayout
-                     android:id="@+id/tabLayout"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:background="?attr/colorPrimary"
-                     android:minHeight="?attr/actionBarSize"
-                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-             </LinearLayout>
-         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-<android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/weekPager"
-        android:background="#fff0cc">
-    </android.support.v4.view.ViewPager>
+        <Button
+            android:id="@+id/wbtn1"
+            android:text="1주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wbtn2"
+            android:text="2주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wbtn3"
+            android:text="3주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wbtn4"
+            android:text="4주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wbtn5"
+            android:text="5주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wbtn6"
+            android:text="6주차"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <ListView
+            android:id="@+id/list2"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="5dp" />
+
+        <ListView
+            android:id="@+id/list1"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="8dp"
+            android:background="#000000" />
+
+    </LinearLayout>
+
 </LinearLayout>
